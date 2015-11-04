@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  resources :posts do
-    resources :comments
+
+  controller :sessions do
+  	get 'login' => :new
+  	post 'login' => :create
+  	delete 'logout' => :destroy
   end
-    root "posts#index"
+
+    resources :users
+  	resources :posts do
+    resources :comments
+  root "posts#index"
+ end
 end
