@@ -1,7 +1,5 @@
-<h1>Welcome to my new Test Blog<h1>
+<h2>Welcome to Sam's Test Blog</h2>
 
-<% provide(:title, "Log in") %>
-<h1>Log in</h1>
 <div class="depot_form" >
 <% if flash[:alert] %>
 <p id="notice" ><%= flash[:alert] %></p>
@@ -11,13 +9,20 @@
 <fieldset>
 <legend>Please Log In</legend>
  
+ <div class="row">
+  <div class="col-md-6 col-md-offset-3">
 <div>
-<label for="name" >Name:</label>
+<label for="name" >Name:</label><br>
 <%= text_field_tag :name, params[:name] %>
+</div>
+
+<div>
+<label for="email" >Email Address:</label><br>
+<%= text_field_tag :email, params[:email] %>
 </div>
  
 <div>
-<label for="password" >Password:</label>
+<label for="password" >Password:</label><br>
 <%= password_field_tag :password, params[:password] %>
 </div>
  
@@ -26,4 +31,6 @@
 </div>
 </fieldset>
 <% end %>
+
+<%= link_to 'New User', new_user_path %>
 </div>
